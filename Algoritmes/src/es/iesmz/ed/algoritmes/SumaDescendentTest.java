@@ -30,8 +30,12 @@ class SumaDescendentTest {
     }
     private static Stream<Arguments> inputsParametrizedSumaTests() {
         return Stream.of(
-                Arguments.of(0, 0),
-                Arguments.of(-1234, 0)
+                Arguments.of(0L, 0L),
+                Arguments.of(-1234L, 1506L),
+                Arguments.of(123456789L, 150891621L),
+                Arguments.of(Long.MAX_VALUE, -1),
+                Arguments.of(Long.MIN_VALUE, -1),
+                Arguments.of(9999999L, 11111103L)
         );
     }
 
