@@ -14,13 +14,12 @@ public class Cablejat {
     /**
      * Constructor para el comprobador de que todos los cables de un array se podrían conectar hasta formar un
      * circuito cerrado.
-     * @param connectors Debe ser un String[] contentiendo "HM", "MH", "HH", "MM". De lo contrario se lanzará una
-     *                   excepción por nombre no válido.
-     * @throws InvalidNameException
+     * @param connectors Debe ser un array de Strings conteniendo los nombres de los cables.
+     * @throws InvalidNameException Si alguno de los nombres no es "HH", "HM", "MH" o "MM".
      */
     public Cablejat(String[] connectors) throws InvalidNameException {
 
-        this.connectors = new ArrayList();
+        this.connectors = new ArrayList<>();
         for (String s : connectors) {
             if (!s.equalsIgnoreCase("HM") && !s.equalsIgnoreCase("MH") && !s.equalsIgnoreCase(
                     "HH") && !s.equalsIgnoreCase("MM")) {
@@ -33,7 +32,7 @@ public class Cablejat {
     /**
      * Función que devuelve true si los cables del atributo "connectors" se podrían conectar hasta formar un circuito
      * cerrado.
-     * @return
+     * @return boolean
      */
     public boolean esPotConnectar() {
         int mix = Collections.frequency(connectors, "HM") + Collections.frequency(connectors, "MH");
@@ -42,7 +41,6 @@ public class Cablejat {
 
         if ((male + female + mix) < 2) return false;
         if (male == female) return true;
-        if ((male + female) <= mix / 2) return true;
-        return false;
+        return ((male + female) <= mix / 2);
     }
 }
