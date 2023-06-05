@@ -2,6 +2,7 @@ package es.iesmz.ed.algoritmes;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -16,6 +17,18 @@ class SudokuTest {
     @BeforeEach
     void setUp() {
         sudoku = null;
+    }
+
+    @Test
+    void bruteForceShouldReturnTrue() {
+        for (int i = 0; i < 10000; i++) {
+            try {
+                System.out.println("Test nº" + i);
+                Assertions.assertTrue(new Sudoku(new SudokuGenerator(false).getSudokuBoard()).esCorrecte());
+            } catch (SudokuException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @ParameterizedTest
