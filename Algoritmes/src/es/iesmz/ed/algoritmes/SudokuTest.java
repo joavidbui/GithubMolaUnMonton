@@ -6,12 +6,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.stream.Stream;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class SudokuTest {
 
@@ -42,7 +37,17 @@ class SudokuTest {
                         { 3, 4, 8, 5, 1, 7, 2, 9, 6 },
                         { 8, 5, 1, 6, 9, 4, 3, 2, 7 },
                         { 9, 7, 2, 3, 5, 8, 4, 6, 1 },
-                        { 6, 3, 4, 2, 7, 1, 9, 5, 8 }})
+                        { 6, 3, 4, 2, 7, 1, 9, 5, 8 }}),
+                Arguments.of((Object) new SudokuGenerator(false).getSudokuBoard()),
+                Arguments.of((Object) new SudokuGenerator(false).getSudokuBoard()),
+                Arguments.of((Object) new SudokuGenerator(false).getSudokuBoard()),
+                Arguments.of((Object) new SudokuGenerator(false).getSudokuBoard()),
+                Arguments.of((Object) new SudokuGenerator(false).getSudokuBoard()),
+                Arguments.of((Object) new SudokuGenerator(false).getSudokuBoard()),
+                Arguments.of((Object) new SudokuGenerator(false).getSudokuBoard()),
+                Arguments.of((Object) new SudokuGenerator(false).getSudokuBoard()),
+                Arguments.of((Object) new SudokuGenerator(false).getSudokuBoard()),
+                Arguments.of((Object) new SudokuGenerator(false).getSudokuBoard())
                 );
     }
 
@@ -57,7 +62,7 @@ class SudokuTest {
     private static Stream<Arguments> InputsSudokuEsCorrecteShouldReturnFalse() {
         return Stream.of(
                 Arguments.of((Object) new int[][]{
-                        { 4, 1, 3, 8, 2, 5, 6, 7, 9 },
+                        { 1, 1, 3, 8, 2, 5, 6, 7, 9 },
                         { 5, 6, 7, 1, 4, 9, 8, 3, 2 },
                         { 2, 8, 9, 7, 3, 6, 1, 4, 5 },
                         { 1, 9, 5, 4, 6, 2, 7, 8, 3 },
@@ -65,7 +70,17 @@ class SudokuTest {
                         { 3, 4, 8, 5, 1, 7, 2, 9, 6 },
                         { 8, 5, 1, 6, 9, 4, 3, 2, 7 },
                         { 9, 7, 2, 3, 5, 8, 4, 6, 1 },
-                        { 6, 3, 4, 2, 7, 1, 9, 5, 8 }})
+                        { 6, 3, 4, 2, 7, 1, 9, 5, 8 }}),
+                Arguments.of((Object) new SudokuGenerator(true).getSudokuBoard()),
+                Arguments.of((Object) new SudokuGenerator(true).getSudokuBoard()),
+                Arguments.of((Object) new SudokuGenerator(true).getSudokuBoard()),
+                Arguments.of((Object) new SudokuGenerator(true).getSudokuBoard()),
+                Arguments.of((Object) new SudokuGenerator(true).getSudokuBoard()),
+                Arguments.of((Object) new SudokuGenerator(true).getSudokuBoard()),
+                Arguments.of((Object) new SudokuGenerator(true).getSudokuBoard()),
+                Arguments.of((Object) new SudokuGenerator(true).getSudokuBoard()),
+                Arguments.of((Object) new SudokuGenerator(true).getSudokuBoard()),
+                Arguments.of((Object) new SudokuGenerator(true).getSudokuBoard())
         );
     }
 
