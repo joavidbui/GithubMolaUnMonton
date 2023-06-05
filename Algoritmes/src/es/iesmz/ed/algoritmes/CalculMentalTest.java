@@ -13,7 +13,7 @@ import java.util.stream.Stream;
 import static org.junit.jupiter.api.Assertions.*;
 
 class CalculMentalTest {
-    static Cablejat calculMental;
+    static CalculMental calculMental;
 
     @BeforeEach
     void setUp() {
@@ -23,13 +23,15 @@ class CalculMentalTest {
     @ParameterizedTest
     @MethodSource("inputsCalculMentalParametrized")
         // six numbers
-    void calculMentalParametrized(int quantitatCasosProva, String input, ArrayList<Integer> expectedOutput) {
-
+    void calculMentalParametrized(String inputs, ArrayList<Integer> expectedOutputs) {
+        calculMental = new CalculMental(inputs);
+        Assertions.assertEquals(expectedOutputs, calculMental.calcula());
     }
 
     private static Stream<Arguments> inputsCalculMentalParametrized() {
-        return Stream.of(Arguments.of(1, "15 + 8 − 7 + 10 − 3", Arrays.asList(23, 16, 26, 23))
-        );
+        return Stream.of(
+                Arguments.of("15 + 8 - 7 + 10 - 3",
+                        new ArrayList<>(Arrays.asList(23, 16, 26, 23))));
     }
 
 }
