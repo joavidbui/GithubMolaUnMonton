@@ -20,11 +20,23 @@ class SudokuTest {
     }
 
     @Test
-    void bruteForceShouldReturnTrue() {
+    void bruteForceSudokuShouldReturnTrue() {
         for (int i = 0; i < 10000; i++) {
             try {
                 System.out.println("Test nº" + i);
                 Assertions.assertTrue(new Sudoku(new SudokuGenerator(false).getSudokuBoard()).esCorrecte());
+            } catch (SudokuException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    @Test
+    void bruteForceSudokuShouldReturnFalse() {
+        for (int i = 0; i < 10000; i++) {
+            try {
+                System.out.println("Test nº" + i);
+                Assertions.assertFalse(new Sudoku(new SudokuGenerator(true).getSudokuBoard()).esCorrecte());
             } catch (SudokuException e) {
                 e.printStackTrace();
             }
