@@ -22,7 +22,11 @@ class SudokuTest {
     @MethodSource("InputsSudokuEsCorrecteShouldReturnTrue")
         // six numbers
     void sudokuEsCorrecteShouldReturnTrue(int[][] inputSudoku) {
-        sudoku = new Sudoku(inputSudoku);
+        try {
+            sudoku = new Sudoku(inputSudoku);
+        } catch (SudokuException e) {
+            e.printStackTrace();
+        }
         Assertions.assertTrue(sudoku.esCorrecte());
     }
 
@@ -55,7 +59,11 @@ class SudokuTest {
     @MethodSource("InputsSudokuEsCorrecteShouldReturnFalse")
         // six numbers
     void sudokuEsCorrecteShouldReturnFalse(int[][] inputSudoku) {
-        sudoku = new Sudoku(inputSudoku);
+        try {
+            sudoku = new Sudoku(inputSudoku);
+        } catch (SudokuException e) {
+            e.printStackTrace();
+        }
         Assertions.assertFalse(sudoku.esCorrecte());
     }
 

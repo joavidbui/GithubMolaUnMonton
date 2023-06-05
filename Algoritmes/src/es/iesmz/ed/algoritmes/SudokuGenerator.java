@@ -2,6 +2,9 @@ package es.iesmz.ed.algoritmes;
 
 import java.lang.*;
 
+/**
+ * Generador de sudokus para realizar tests del comprobador de sudokus. Gracias, StackOverflow.
+ */
 public class SudokuGenerator {
     int[][] sudokuBoard;
     int N;
@@ -40,7 +43,6 @@ public class SudokuGenerator {
 
     void fillDiagonal()
     {
-
         for (int i = 0; i<N; i=i+SRN)
             fillBox(i, i);
     }
