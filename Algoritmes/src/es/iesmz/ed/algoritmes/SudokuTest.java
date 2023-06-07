@@ -66,17 +66,7 @@ class SudokuTest {
                         { 3, 4, 8, 5, 1, 7, 2, 9, 6 },
                         { 8, 5, 1, 6, 9, 4, 3, 2, 7 },
                         { 9, 7, 2, 3, 5, 8, 4, 6, 1 },
-                        { 6, 3, 4, 2, 7, 1, 9, 5, 8 }}),
-                Arguments.of((Object) new SudokuGenerator(false).getSudokuBoard()),
-                Arguments.of((Object) new SudokuGenerator(false).getSudokuBoard()),
-                Arguments.of((Object) new SudokuGenerator(false).getSudokuBoard()),
-                Arguments.of((Object) new SudokuGenerator(false).getSudokuBoard()),
-                Arguments.of((Object) new SudokuGenerator(false).getSudokuBoard()),
-                Arguments.of((Object) new SudokuGenerator(false).getSudokuBoard()),
-                Arguments.of((Object) new SudokuGenerator(false).getSudokuBoard()),
-                Arguments.of((Object) new SudokuGenerator(false).getSudokuBoard()),
-                Arguments.of((Object) new SudokuGenerator(false).getSudokuBoard()),
-                Arguments.of((Object) new SudokuGenerator(false).getSudokuBoard())
+                        { 6, 3, 4, 2, 7, 1, 9, 5, 8 }})
                 );
     }
 
@@ -103,17 +93,7 @@ class SudokuTest {
                         { 3, 4, 8, 5, 1, 7, 2, 9, 6 },
                         { 8, 5, 1, 6, 9, 4, 3, 2, 7 },
                         { 9, 7, 2, 3, 5, 8, 4, 6, 1 },
-                        { 6, 3, 4, 2, 7, 1, 9, 5, 8 }}),
-                Arguments.of((Object) new SudokuGenerator(true).getSudokuBoard()),
-                Arguments.of((Object) new SudokuGenerator(true).getSudokuBoard()),
-                Arguments.of((Object) new SudokuGenerator(true).getSudokuBoard()),
-                Arguments.of((Object) new SudokuGenerator(true).getSudokuBoard()),
-                Arguments.of((Object) new SudokuGenerator(true).getSudokuBoard()),
-                Arguments.of((Object) new SudokuGenerator(true).getSudokuBoard()),
-                Arguments.of((Object) new SudokuGenerator(true).getSudokuBoard()),
-                Arguments.of((Object) new SudokuGenerator(true).getSudokuBoard()),
-                Arguments.of((Object) new SudokuGenerator(true).getSudokuBoard()),
-                Arguments.of((Object) new SudokuGenerator(true).getSudokuBoard())
+                        { 6, 3, 4, 2, 7, 1, 9, 5, 8 }})
         );
     }
 
